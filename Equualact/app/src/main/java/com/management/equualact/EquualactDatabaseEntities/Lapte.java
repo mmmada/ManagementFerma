@@ -24,10 +24,10 @@ public class Lapte {
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "idLapte")
-    private long idLapte;
+    private Long idLapte;
 
     @ColumnInfo(name = "idMagar")
-    private long idMagar;
+    private Long idMagar;
 
     @ColumnInfo(name = "dataInregistrare")
     private Date dataInregistrare;
@@ -35,25 +35,25 @@ public class Lapte {
     @ColumnInfo(name = "cantitate")
     private double cantitate;
 
-    public Lapte(long idMagar, Date dataInregistrare, double cantitate) {
+    public Lapte(Long idMagar, Date dataInregistrare, double cantitate) {
         this.idMagar = idMagar;
         this.dataInregistrare = dataInregistrare;
         this.cantitate = cantitate;
     }
 
-    public long getIdLapte() {
+    public Long getIdLapte() {
         return idLapte;
     }
 
-    public void setIdLapte(long idLapte) {
+    public void setIdLapte(Long idLapte) {
         this.idLapte = idLapte;
     }
 
-    public long getIdMagar() {
+    public Long getIdMagar() {
         return idMagar;
     }
 
-    public void setIdMagar(long idMagar) {
+    public void setIdMagar(Long idMagar) {
         this.idMagar = idMagar;
     }
 

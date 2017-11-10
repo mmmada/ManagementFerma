@@ -19,7 +19,7 @@ public interface InfoFemelaDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void addInfoFemela(InfoFemela infoFemela);
 
-    @Query("SELECT * FROM infoFemela WHERE idMagar= :idFemela")
+    @Query("SELECT * FROM InfoFemela WHERE idMagar= :idFemela")
     List<InfoFemela> getInfoFemelaById(long idFemela);
 
     @Update(onConflict = OnConflictStrategy.REPLACE)

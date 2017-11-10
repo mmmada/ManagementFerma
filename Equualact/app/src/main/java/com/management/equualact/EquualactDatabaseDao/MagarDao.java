@@ -1,7 +1,6 @@
 package com.management.equualact.EquualactDatabaseDao;
 
 import android.arch.persistence.room.Dao;
-import android.arch.persistence.room.Index;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.OnConflictStrategy;
 import android.arch.persistence.room.Query;
@@ -20,13 +19,16 @@ public interface MagarDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void addMagar(Magar magar);
 
-    @Query("SELECT * FROM magar WHERE sex = :sexMagar")
+    @Query("SELECT nume FROM Magar")
+    public List<String> getAllAnimals();
+
+    @Query("SELECT * FROM Magar WHERE sex = :sexMagar")
     public List<Magar> getMagarBySex(String sexMagar);
 
-    @Query("SELECT * FROM magar WHERE nume = :numeMagar")
+    @Query("SELECT * FROM Magar WHERE nume = :numeMagar")
     public List<Magar> getMagarByName(String numeMagar);
 
-    @Query("SELECT * FROM magar WHERE idMagar = :idMagar")
+    @Query("SELECT * FROM Magar WHERE idMagar = :idMagar")
     public Magar getMagarDetailsById(long idMagar);
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
